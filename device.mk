@@ -87,9 +87,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
 
-# Graphics
-MTK_GPU_VERSION := mali midgard r7p0
-
 # Symbols for Mediatek
 PRODUCT_PACKAGES += \
     libshims_audio \
@@ -100,17 +97,12 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.default \
     power.mt6735
 
 # Radio dependencies
 PRODUCT_PACKAGES += \
     muxreport \
     terservice
-
-# Snap
-PRODUCT_PACKAGES += \
-    Snap
 
 # Telephony
 SIM_COUNT := 2
@@ -125,7 +117,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
-    dhcpcd.conf \
     wpa_supplicant \
 
 PRODUCT_COPY_FILES += \
@@ -137,17 +128,6 @@ PRODUCT_COPY_FILES += \
 # Charger Mode
 PRODUCT_PACKAGES += \
     charger_res_images
-
-ifneq ($(TARGET_BUILD_VARIANT), user)
-# Mediatek logging service
-PRODUCT_PACKAGES += \
-    MTKLogger \
-    emdlogger1 \
-    mdlogger \
-    mobile_log_d \
-    netdiag \
-    tcpdump
-endif
 
 # Key Layouts
 PRODUCT_COPY_FILES += \
