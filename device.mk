@@ -34,6 +34,10 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_PACKAGES += \
    Snap
 
+# Doze
+PRODUCT_PACKAGES += \
+    Doze
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
