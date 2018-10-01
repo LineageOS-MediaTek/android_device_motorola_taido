@@ -96,6 +96,9 @@ BOARD_USES_MTK_HARDWARE := true
 # RIL
 BOARD_RIL_CLASS := ../../../device/motorola/taido/ril
 
+# Seccomp filter
+BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
+
 # SELinux
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
