@@ -38,6 +38,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Doze
 
+# Engineer Mode
+PRODUCT_PACKAGES += \
+    EngineerMode
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
