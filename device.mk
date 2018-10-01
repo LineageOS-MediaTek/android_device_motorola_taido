@@ -93,11 +93,12 @@ PRODUCT_COPY_FILES += \
 
 # Symbols for Mediatek
 PRODUCT_PACKAGES += \
-    libshims_audio \
-    libshims_bionic \
-    libshims_gui \
-    libshims_ui \
-    libshims_xlog
+    libshim_audio \
+    libshim_bionic \
+    libshim_gui \
+    libshis_ui \
+    libshim_xlog \
+    libshim_ifc
 
 # Power
 PRODUCT_PACKAGES += \

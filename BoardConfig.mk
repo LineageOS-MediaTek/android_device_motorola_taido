@@ -100,7 +100,12 @@ BOARD_RIL_CLASS := ../../../device/motorola/taido/ril
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Symbols for Mediatek
-LINKER_FORCED_SHIM_LIBS := /system/lib/libmedia.so|libshims_audio.so:/system/lib/libc.so|libshims_bionic.so:/system/lib/libgui.so|libshims_gui.so:/system/lib/libui.so|libshims_ui.so:/system/lib/liblog.so|libshims_xlog.so
+LINKER_FORCED_SHIM_LIBS := /system/lib/libmedia.so|libshim_audio.so
+LINKER_FORCED_SHIM_LIBS += /system/lib/libc.so|libshim_bionic.so
+LINKER_FORCED_SHIM_LIBS += /system/lib/libgui.so|libshim_gui.so
+LINKER_FORCED_SHIM_LIBS += /system/lib/libui.so|libshim_ui.so
+LINKER_FORCED_SHIM_LIBS += /system/lib/liblog.so|libshim_xlog.so
+LINKER_FORCED_SHIM_LIBS += /system/lib/libnetutils.so|libshim_ifc.so
 
 # TWRP
 ifeq ($(WITH_TWRP),true)

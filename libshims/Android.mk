@@ -16,7 +16,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := audio.cpp
-LOCAL_MODULE := libshims_audio
+LOCAL_MODULE := libshim_audio
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_32_BIT_ONLY := true
@@ -25,7 +25,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := bionic.cpp
-LOCAL_MODULE := libshims_bionic
+LOCAL_MODULE := libshim_bionic
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_32_BIT_ONLY := true
@@ -34,7 +34,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := gui.cpp
-LOCAL_MODULE := libshims_gui
+LOCAL_MODULE := libshim_gui
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_32_BIT_ONLY := true
@@ -43,7 +43,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := ui.cpp
-LOCAL_MODULE := libshims_ui
+LOCAL_MODULE := libshim_ui
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_32_BIT_ONLY := true
@@ -52,10 +52,17 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := xlog.cpp
-LOCAL_MODULE := libshims_xlog
+LOCAL_MODULE := libshim_xlog
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_32_BIT_ONLY := true
 LOCAL_SHARED_LIBRARIES := liblog
 include $(BUILD_SHARED_LIBRARY)
 
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := netutils.c
+LOCAL_SHARED_LIBRARIES := liblog libcutils
+LOCAL_MODULE := libshim_ifc
+LOCAL_C_INCLUDES += system/core/libnetutils/include
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
