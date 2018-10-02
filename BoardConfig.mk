@@ -15,6 +15,8 @@
 
 DEVICE_PATH := device/motorola/taido
 
+-include $(DEVICE_PATH)/RecoveryConfig.mk
+
 TARGET_BOARD_PLATFORM := mt6735m
 TARGET_BOOTLOADER_BOARD_NAME := mt6535
 
@@ -109,14 +111,6 @@ LINKER_FORCED_SHIM_LIBS += /system/lib/libgui.so|libshim_gui.so
 LINKER_FORCED_SHIM_LIBS += /system/lib/libui.so|libshim_ui.so
 LINKER_FORCED_SHIM_LIBS += /system/lib/liblog.so|libshim_xlog.so
 LINKER_FORCED_SHIM_LIBS += /system/lib/libnetutils.so|libshim_ifc.so
-
-# TWRP
-ifeq ($(WITH_TWRP),true)
-TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)/twrp
-TW_THEME := portrait_hdpi
-TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-endif
 
 # Wireless
 BOARD_WLAN_DEVICE := MediaTek
